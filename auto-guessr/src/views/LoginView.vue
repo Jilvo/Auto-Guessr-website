@@ -65,22 +65,24 @@ const naiveThemeOverrides: GlobalThemeOverrides = {
   <NConfigProvider :theme="darkTheme" :theme-overrides="naiveThemeOverrides">
     <main class="grid min-h-screen grid-cols-1 bg-garage-900 text-slate-50 lg:grid-cols-5">
       <section
-        class="garage-stripes relative flex min-h-96 flex-col justify-between overflow-hidden border border-garage-border p-8 lg:col-span-3 lg:min-h-screen lg:border-r-0 lg:p-14 xl:p-16"
+        class="garage-stripes relative isolate flex min-h-96 flex-col justify-between overflow-hidden border border-garage-border p-8 lg:col-span-3 lg:min-h-screen lg:border-r-0 lg:p-14 xl:p-16"
         aria-label="Presentation Auto Guessr"
       >
+        <img
+          src="@/assets/images/lamborghini-aventador.jpg"
+          alt="Garage"
+          class="absolute inset-0 z-0 h-full w-full object-cover object-center opacity-40"
+        />
+        <div class="absolute inset-0 z-0 bg-garage-900/60"></div>
+
         <RouterLink
-          class="w-fit font-display text-3xl font-bold tracking-widest text-white uppercase"
+          class="relative z-10 w-fit font-display text-3xl font-bold tracking-widest text-white uppercase"
           to="/"
         >
           AUTOGUESSR
         </RouterLink>
 
-        <p class="hidden self-center text-center font-mono text-base leading-8 text-slate-500 md:block">
-          photo - voiture de profil sous éclairage garage,<br />
-          halo chaud, sol béton, fond noir
-        </p>
-
-        <div class="max-w-4xl">
+        <div class="relative z-10 max-w-4xl">
           <p class="text-xs font-semibold tracking-widest text-garage-orange uppercase">
             Quiz du jour disponible
           </p>
@@ -140,16 +142,18 @@ const naiveThemeOverrides: GlobalThemeOverrides = {
             autocomplete="current-password"
             show-password-on="mousedown"
           />
+          <div class="mt-8">
 
-          <NButton
+            <NButton
             type="primary"
             attr-type="submit"
             block
             size="large"
             class="mt-8 tracking-widest uppercase"
-          >
+            >
             Se connecter
           </NButton>
+        </div>
 
           <NDivider>ou</NDivider>
 
