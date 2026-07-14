@@ -1,35 +1,56 @@
+@import 'tailwindcss';
 @import './base.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+@theme {
+  --color-garage-orange: #f49a27;
+  --color-garage-orange-soft: #ffb454;
+  --color-garage-orange-deep: #d77f14;
+  --color-garage-900: #0e1014;
+  --color-garage-800: #111319;
+  --color-garage-input: #101319;
+  --color-garage-border: #242831;
+  --color-garage-border-soft: #3a414f;
+  --color-garage-muted: #7f899b;
+  --font-display: 'Arial Narrow', 'Roboto Condensed', Arial, sans-serif;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+@layer base {
+  a {
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .n-input input:-webkit-autofill,
+  .n-input input:-webkit-autofill:hover,
+  .n-input input:-webkit-autofill:focus {
+    caret-color: #f8fafc;
+    -webkit-text-fill-color: #f8fafc;
+    -webkit-box-shadow: 0 0 0 1000px var(--color-garage-input) inset;
+  }
+}
+
+@layer utilities {
+  .garage-stripes {
+    background:
+      linear-gradient(180deg, rgb(14 16 20 / 12%), rgb(14 16 20 / 96%)),
+      repeating-linear-gradient(
+        45deg,
+        rgb(255 255 255 / 2.2%) 0,
+        rgb(255 255 255 / 2.2%) 14px,
+        transparent 14px,
+        transparent 30px
+      ),
+      #101319;
+  }
+}
+
+#app {
+  min-height: 100vh;
+  font-weight: normal;
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    opacity: 0.82;
   }
 }
