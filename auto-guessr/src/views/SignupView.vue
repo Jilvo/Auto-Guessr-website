@@ -4,11 +4,16 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-    <main class="grid min-h-screen grid-cols-1 bg-garage-900 text-slate-50 lg:grid-cols-5">
+    <main class="relative grid min-h-screen grid-cols-1 bg-garage-900 text-slate-50 lg:grid-cols-5">
+        <RouterLink
+            class="absolute top-8 left-8 z-20 w-fit font-display text-3xl font-bold tracking-widest text-white uppercase lg:top-14 lg:left-14"
+            to="/">
+            AUTOGUESSR
+        </RouterLink>
 
         <section
             class="grid min-h-96 place-items-center border border-garage-border bg-garage-800 px-6 py-10 lg:col-span-2 lg:min-h-screen lg:px-0"
-            aria-label="Connexion">
+            aria-label="Création de compte">
             <form class="w-full max-w-xl lg:w-3/4" @submit.prevent>
                 <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase">
                     Création de compte
@@ -67,18 +72,13 @@ import { RouterLink } from 'vue-router'
         </section>
 
         <section
-            class="relative isolate flex min-h-96 flex-col justify-between overflow-hidden border border-garage-border p-8 lg:col-span-3 lg:min-h-screen lg:border-r-0 lg:p-14 xl:p-16"
+            class="relative isolate flex min-h-96 flex-col overflow-hidden border border-garage-border p-8 lg:col-span-3 lg:min-h-screen lg:border-r-0 lg:p-14 xl:p-16"
             aria-label="Presentation Auto Guessr">
             <img src="@/assets/images/whte-voiture-garee_417767-560.avif" alt="Garage"
                 class="absolute inset-0 z-0 h-full w-full object-cover object-center opacity-80" />
             <div class="absolute inset-0 z-0 bg-garage-900/60"></div>
 
-            <RouterLink class="relative z-10 w-fit font-display text-3xl font-bold tracking-widest text-white uppercase"
-                to="/">
-                AUTOGUESSR
-            </RouterLink>
-
-            <div class="relative z-10 max-w-4xl">
+            <div class="relative z-10 mt-auto max-w-4xl">
                 <p class="mb-6 text-xs font-semibold tracking-widest text-garage-orange uppercase">
                     Ce qui t'attend
                 </p>
